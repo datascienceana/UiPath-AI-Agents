@@ -1,0 +1,57 @@
+{
+  "$resourceType": "escalation",
+  "id": "77cce400-9e55-4b16-a059-b546c94408c4",
+  "name": "Escalation_1",
+  "description": "Escalate it to IT Support manager when Agent is not sure",
+  "channels": [
+    {
+      "id": "cef44856-f03c-41ef-b532-7ef84c3b11b7",
+      "name": "Channel",
+      "description": "Channel description",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "Issue": {
+            "type": "string"
+          }
+        }
+      },
+      "inputSchemaDotnetTypeMapping": {
+        "Issue": "System.String"
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchemaDotnetTypeMapping": {},
+      "outcomeMapping": {
+        "Approve": "continue",
+        "Reject": "continue"
+      },
+      "recipients": [
+        {
+          "type": 1,
+          "value": "97446085-50e1-4f1d-8ef3-464a4243b836",
+          "displayName": "24F2006181 PREMJEET KAUR"
+        }
+      ],
+      "type": "actionCenter",
+      "priority": "Medium",
+      "properties": {
+        "appName": "ITSupport_EscalationApp",
+        "appVersion": 1,
+        "folderName": null,
+        "resourceKey": "dd8d2b89-77d6-485c-afa3-3c6e35edd320",
+        "isActionableMessageEnabled": false,
+        "actionableMessageMetaData": null
+      }
+    }
+  ],
+  "isAgentMemoryEnabled": false,
+  "governanceProperties": {
+    "isEscalatedAtRuntime": false
+  },
+  "escalationType": 0,
+  "vsEscalationProperties": null,
+  "properties": {}
+}

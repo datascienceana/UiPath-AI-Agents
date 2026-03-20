@@ -1,0 +1,36 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "ITSupport_EscalationApp",
+    "kind": "app",
+    "type": "vB Action",
+    "apiVersion": "apps.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [
+      {
+        "name": "ITSupport_EscalationApp",
+        "kind": "appVersion"
+      }
+    ],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "ITSupport_EscalationApp",
+      "type": "Regular",
+      "appSystemName": "ID61e34d0c3b914147b4ad2b42de5b56be",
+      "version": "1.0.0",
+      "appVersionRef": {
+        "name": "ITSupport_EscalationApp",
+        "key": "ID8ccabd0497554b2985abf78155a6766c"
+      },
+      "actionSchema": "{\u0022id\u0022:\u0022IDebd79e4fc65440d392e1dc0077083ed3\u0022,\u0022name\u0022:\u0022ActionSchema\u0022,\u0022description\u0022:\u0022Action Schema\u0022,\u0022key\u0022:\u00222331eb3b-ad95-4c35-b44b-0164fe2d3d16\u0022,\u0022inputs\u0022:[{\u0022name\u0022:\u0022Issue\u0022,\u0022key\u0022:\u00221e2342bb-ed51-4494-86af-0d5dbbd6730c\u0022,\u0022required\u0022:false,\u0022customType\u0022:null,\u0022properties\u0022:[],\u0022version\u0022:0,\u0022type\u0022:\u0022System.String\u0022,\u0022typeNamespace\u0022:\u0022system\u0022,\u0022isList\u0022:false,\u0022collectionDataType\u0022:null}],\u0022outputs\u0022:[],\u0022inOuts\u0022:[],\u0022outcomes\u0022:[{\u0022name\u0022:\u0022Approve\u0022,\u0022key\u0022:\u002264afb9e7-904d-460f-bce9-5c4f78b45972\u0022,\u0022required\u0022:false,\u0022customType\u0022:null,\u0022properties\u0022:[],\u0022version\u0022:0,\u0022type\u0022:\u0022System.String\u0022,\u0022typeNamespace\u0022:\u0022system\u0022,\u0022isList\u0022:false,\u0022collectionDataType\u0022:null},{\u0022name\u0022:\u0022Reject\u0022,\u0022key\u0022:\u00220e513917-d7d6-47d4-89cf-ddfe9e071728\u0022,\u0022required\u0022:false,\u0022customType\u0022:null,\u0022properties\u0022:[],\u0022version\u0022:0,\u0022type\u0022:\u0022System.String\u0022,\u0022typeNamespace\u0022:\u0022system\u0022,\u0022isList\u0022:false,\u0022collectionDataType\u0022:null}],\u0022version\u0022:1,\u0022__tenantId\u0022:\u0022mycokhwjdtd\u0022,\u0022__tenantSubId\u0022:\u0022default\u0022,\u0022__tenantEnvironmentId\u0022:\u0022production\u0022,\u0022__isDeleted\u0022:false}"
+    },
+    "locks": [],
+    "key": "dd8d2b89-77d6-485c-afa3-3c6e35edd320"
+  }
+}

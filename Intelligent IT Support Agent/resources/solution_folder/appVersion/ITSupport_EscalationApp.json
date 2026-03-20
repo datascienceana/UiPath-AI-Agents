@@ -1,0 +1,37 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "ITSupport_EscalationApp",
+    "kind": "appVersion",
+    "apiVersion": "apps.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [
+      {
+        "name": "ITSupport_EscalationApp.uiapp",
+        "kind": "appVersion",
+        "url": "https://cloud.uipath.com/32e5bf3f-b99b-4eb6-990e-f33ac3cc367e/apps_/default/api/v1/default/models/ID61e34d0c3b914147b4ad2b42de5b56be/publish/versions/1/package",
+        "key": "ID8ccabd0497554b2985abf78155a6766c"
+      }
+    ],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "name": "ITSupport_EscalationApp",
+      "description": "",
+      "appSystemName": "ID61e34d0c3b914147b4ad2b42de5b56be",
+      "version": "1.0.0",
+      "isAppPublic": false,
+      "expressionLanguage": "VB",
+      "uiappFile": "ID8ccabd0497554b2985abf78155a6766c",
+      "uiappFileName": "ITSupport_EscalationApp.uiapp",
+      "isUnifiedProject": false
+    },
+    "locks": [],
+    "key": "ID8ccabd0497554b2985abf78155a6766c"
+  }
+}

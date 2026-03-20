@@ -1,0 +1,29 @@
+{
+  "docVersion": "1.0.0",
+  "resource": {
+    "name": "premjeet.kauriitm@gmail.com-premjeetkauriitm",
+    "kind": "connection",
+    "type": "uipath-atlassian-jira",
+    "apiVersion": "integrationservice.uipath.com/v1",
+    "isOverridable": true,
+    "dependencies": [],
+    "runtimeDependencies": [],
+    "files": [],
+    "folders": [
+      {
+        "fullyQualifiedName": "solution_folder"
+      }
+    ],
+    "spec": {
+      "connectorName": "Jira",
+      "name": "premjeet.kauriitm@gmail.com-premjeetkauriitm",
+      "description": null,
+      "authenticationType": "AuthenticateAfterDeployment",
+      "connectorVersion": "1.11.8",
+      "connectorKey": "uipath-atlassian-jira",
+      "pollingInterval": 5
+    },
+    "locks": [],
+    "key": "43c17e5d-c198-4b81-913d-ef13de6184e6"
+  }
+}

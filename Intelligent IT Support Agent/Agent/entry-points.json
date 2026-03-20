@@ -1,0 +1,38 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "/content/agent.json",
+      "type": "agent",
+      "uniqueId": "1e02b65f-4231-4ab4-83d7-9415c05a6ef4",
+      "input": {
+        "type": "object",
+        "required": [
+          "issue"
+        ],
+        "properties": {
+          "issue": {
+            "type": "string",
+            "description": "The IT issue reported by the user. Should include a description of the problem, any error messages seen, and what the user was doing when it occurred.",
+            "minLength": 5,
+            "maxLength": 2000
+          }
+        },
+        "title": "Inputs"
+      },
+      "output": {
+        "type": "object",
+        "required": [
+          "content"
+        ],
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "The full conversational IT support response. Plain text only — no JSON, no code blocks, no markdown formatting. Should include the issue summary, troubleshooting steps, Jira ticket confirmation, and expected response time in a friendly, readable format."
+          }
+        }
+      }
+    }
+  ]
+}
