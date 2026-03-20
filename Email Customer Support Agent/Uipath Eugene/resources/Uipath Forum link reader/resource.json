@@ -1,0 +1,130 @@
+{
+  "$resourceType": "tool",
+  "name": "Uipath Forum link reader",
+  "description": "Extract readable text from a Uipath forum URL and provide it in a structured format.",
+  "location": "external",
+  "type": "integration",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "url": {
+        "type": "string",
+        "title": "URL",
+        "description": "A Uipath Forum URL"
+      },
+      "provider": {
+        "type": "string",
+        "title": "Search Engine",
+        "description": "The search engine to use.",
+        "enum": [
+          "Jina"
+        ],
+        "oneOf": [
+          {
+            "const": "Jina",
+            "title": "Jina"
+          }
+        ]
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "url",
+      "provider"
+    ]
+  },
+  "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "text": {
+        "title": "Text",
+        "type": "string",
+        "description": "The text from the URL"
+      }
+    },
+    "definitions": {}
+  },
+  "settings": {},
+  "properties": {
+    "toolPath": "/v1/webRead",
+    "objectName": "v1::webRead",
+    "toolDisplayName": "Web Reader",
+    "toolDescription": "Extract readable text from a publicly accessible URL and provide it in a structured format.",
+    "method": "POST",
+    "connection": {
+      "id": "f9143f2f-e597-4501-bdab-a635922ae7c7",
+      "name": "UiPath GenAI Activities",
+      "elementInstanceId": 0,
+      "apiBaseUri": "",
+      "state": "enabled",
+      "isDefault": false,
+      "connector": {
+        "key": "uipath-uipath-airdk",
+        "name": "UiPath GenAI Activities",
+        "image": "https://cloud.uipath.com/elements_/scaleunit_/17d5b0e1-f66c-4b4d-b4aa-620d35a563cf/v3/element/elements/uipath-uipath-airdk/image",
+        "enabled": true
+      },
+      "folder": {
+        "key": "e29737a8-c509-4d56-966d-7d3ee6ad6ccd",
+        "path": "e29737a8-c509-4d56-966d-7d3ee6ad6ccd"
+      },
+      "solutionProperties": {
+        "resourceKey": "f9143f2f-e597-4501-bdab-a635922ae7c7"
+      }
+    },
+    "parameters": [
+      {
+        "name": "provider",
+        "displayName": "Search Engine",
+        "type": "string",
+        "fieldLocation": "body",
+        "value": "Jina",
+        "description": "The search engine to use.",
+        "position": "primary",
+        "sortOrder": 1,
+        "required": true,
+        "fieldVariant": "static",
+        "isCascading": false,
+        "dynamic": false,
+        "enumValues": [
+          {
+            "name": "Jina",
+            "value": "Jina"
+          }
+        ],
+        "loadReferenceOptionsByDefault": null,
+        "dynamicBehavior": [],
+        "reference": null
+      },
+      {
+        "name": "url",
+        "displayName": "URL",
+        "type": "string",
+        "fieldLocation": "body",
+        "value": "{{prompt}}",
+        "description": "A Uipath Forum URL",
+        "position": "primary",
+        "sortOrder": 2,
+        "required": true,
+        "fieldVariant": "dynamic",
+        "isCascading": false,
+        "dynamic": true,
+        "enumValues": null,
+        "loadReferenceOptionsByDefault": null,
+        "dynamicBehavior": [],
+        "reference": null
+      }
+    ],
+    "bodyStructure": {
+      "contentType": "json"
+    }
+  },
+  "guardrail": {
+    "policies": []
+  },
+  "iconUrl": "https://cloud.uipath.com/elements_/scaleunit_/17d5b0e1-f66c-4b4d-b4aa-620d35a563cf/v3/element/elements/uipath-uipath-airdk/image",
+  "id": "0098a087-0bbe-4b17-a2f3-7394c0511414",
+  "isPreview": false,
+  "isEnabled": true
+}

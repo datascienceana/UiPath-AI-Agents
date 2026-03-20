@@ -1,0 +1,54 @@
+{
+  "$schema": "https://cloud.uipath.com/draft/2024-12/entry-point",
+  "$id": "entry-points.json",
+  "entryPoints": [
+    {
+      "filePath": "/content/agent.json",
+      "type": "agent",
+      "uniqueId": "b326406d-f62b-4b32-b898-1ec730d23fdc",
+      "input": {
+        "type": "object",
+        "required": [
+          "sender_name",
+          "sender_email",
+          "email_subject",
+          "email_body",
+          "email_id"
+        ],
+        "properties": {
+          "sender_name": {
+            "type": "string",
+            "description": "Full name of the student sending the email. Used to address the student personally in the response."
+          },
+          "sender_email": {
+            "type": "string",
+            "description": "Email address of the student sending the query. Used to identify who to reply to.",
+            "format": "email"
+          },
+          "email_subject": {
+            "type": "string",
+            "description": "Subject line of the incoming student email. Provides context about the topic of the question."
+          },
+          "email_body": {
+            "type": "string",
+            "description": "Full body content of the student's email. Contains the actual question or issue that needs to be addressed."
+          },
+          "email_id": {
+            "type": "string",
+            "description": "Unique identifier of the incoming email. Used to track and reference the specific email being processed."
+          }
+        },
+        "title": "Inputs"
+      },
+      "output": {
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string",
+            "description": "Output content"
+          }
+        }
+      }
+    }
+  ]
+}

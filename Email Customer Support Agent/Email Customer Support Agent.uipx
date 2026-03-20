@@ -1,0 +1,17 @@
+{
+  "DocVersion": "1.0.0",
+  "StudioMinVersion": "2025.04.0",
+  "SolutionId": "1e855ff6-b5ba-417e-326d-08de845f8a4f",
+  "Projects": [
+    {
+      "Type": "ProcessOrchestration",
+      "ProjectRelativePath": "Agentic Process/project.uiproj",
+      "Id": "d6728e0d-a79e-49ba-ba76-8dac69fc1c5e"
+    },
+    {
+      "Type": "Agent",
+      "ProjectRelativePath": "Uipath Eugene/project.uiproj",
+      "Id": "5f4f371f-4e20-4054-b74c-b27087584eec"
+    }
+  ]
+}

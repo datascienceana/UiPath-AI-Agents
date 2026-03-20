@@ -1,0 +1,90 @@
+{
+  "version": "2.0",
+  "resources": [
+    {
+      "resource": "EventTrigger",
+      "key": "3f29bd83-8c8b-4eef-af74-934fab24979f",
+      "id": "EventTrigger3f29bd83-8c8b-4eef-af74-934fab24979f",
+      "value": {
+        "ConnectionId": {
+          "defaultValue": "3f29bd83-8c8b-4eef-af74-934fab24979f",
+          "isExpression": false
+        },
+        "EntryPointUniqueId": {
+          "defaultValue": "bd1b6d7e-c58d-45b5-9d33-d73a99967415",
+          "isExpression": false
+        }
+      },
+      "metadata": {
+        "UseConnectionService": "true",
+        "Connector": "uipath-google-gmail",
+        "ActivityName": "EMAIL_RECEIVED",
+        "BindingsVersion": "2.2",
+        "ObjectName": "Message",
+        "Operation": "EMAIL_RECEIVED",
+        "FilterExpression": "(ParentFolders[?ID == 'INBOX']) && ((contains(Subject, 'Uipath') && contains(Subject, 'uipath') && contains(Subject, 'UIPATH')))"
+      }
+    },
+    {
+      "resource": "Property",
+      "key": "EMAIL_RECEIVED",
+      "value": {
+        "ParentFolders[*].ID": {
+          "defaultValue": "INBOX",
+          "isExpression": false
+        }
+      },
+      "metadata": {
+        "TriggerCreateParameters": "ParentFolders[*].ID",
+        "DebugQueryParameters": "ParentFolders[*].ID",
+        "BindingsVersion": "2.2",
+        "ObjectName": "Message",
+        "ActivityName": "EMAIL_RECEIVED",
+        "ParentResourceKey": "EventTrigger.3f29bd83-8c8b-4eef-af74-934fab24979f"
+      },
+      "id": "Property_Event_start"
+    },
+    {
+      "resource": "Connection",
+      "key": "3f29bd83-8c8b-4eef-af74-934fab24979f",
+      "id": "Connection3f29bd83-8c8b-4eef-af74-934fab24979f",
+      "value": {
+        "ConnectionId": {
+          "defaultValue": "3f29bd83-8c8b-4eef-af74-934fab24979f",
+          "isExpression": false,
+          "displayName": "uipath-google-gmail connection"
+        }
+      },
+      "metadata": {
+        "ActivityName": "",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "uipath-google-gmail connection",
+        "UseConnectionService": "true",
+        "Connector": "uipath-google-gmail"
+      }
+    },
+    {
+      "resource": "process",
+      "key": "Uipath Eugene",
+      "id": "processUipath Eugene",
+      "value": {
+        "folderPath": {
+          "isExpression": false,
+          "displayName": "Folder path"
+        },
+        "name": {
+          "defaultValue": "Uipath Eugene",
+          "isExpression": false,
+          "displayName": "Process name"
+        }
+      },
+      "metadata": {
+        "ActivityName": "Answer the question",
+        "BindingsVersion": "2.2",
+        "DisplayLabel": "name",
+        "SolutionsSupport": "true",
+        "subType": "Agent"
+      }
+    }
+  ]
+}

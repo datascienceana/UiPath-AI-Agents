@@ -1,0 +1,289 @@
+{
+  "$resourceType": "tool",
+  "name": "Forward Email to Leon",
+  "description": "Forwards an email to Leon to answer the question.",
+  "location": "external",
+  "type": "integration",
+  "inputSchema": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "title": "Email ID",
+        "description": "The ID of email to forward",
+        "enum": [
+          "{{email_id}}"
+        ]
+      },
+      "saveAsDraft": {
+        "type": "boolean",
+        "title": "Save as draft",
+        "description": "Specifies whether the email should be saved as draft instead of being sent"
+      },
+      "subject": {
+        "type": "string",
+        "title": "New subject",
+        "description": "The new subject of the email. If left blank, the original subject is used"
+      },
+      "cc": {
+        "type": "string",
+        "title": "CC",
+        "description": "The secondary recipients of the email, separated by comma (,)"
+      },
+      "bcc": {
+        "type": "string",
+        "title": "BCC",
+        "description": "The hidden recipients of the email, separated by comma (,)"
+      },
+      "body": {
+        "type": "string",
+        "title": "Body",
+        "description": "Please reply to this student.\n\nRegards,\nEugene (Your AI Assistant)",
+        "enum": [
+          "<p class=\"editor-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Hi Leon,</span></p><p class=\"editor-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">            Please answer the students question .</span></p><p class=\"editor-paragraph\" dir=\"ltr\"><br></p><p class=\"editor-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">regards,</span></p><p class=\"editor-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Your Eugene(AI Assistant)</span></p>"
+        ]
+      },
+      "to": {
+        "type": "string",
+        "title": "To",
+        "description": "The primary recipients of the email, separated by comma (,)",
+        "enum": [
+          "gurendersingh@gmail.com"
+        ]
+      }
+    },
+    "additionalProperties": false,
+    "required": [
+      "id",
+      "to"
+    ]
+  },
+  "outputSchema": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "threadId": {
+        "title": "Email thread identifier",
+        "type": "string",
+        "description": "A unique identifier for the email thread."
+      },
+      "labelIds[*]": {
+        "title": "Email label identifiers",
+        "type": "string",
+        "description": "A list of identifiers for labels associated with the email."
+      },
+      "id": {
+        "title": "Email ID",
+        "type": "string",
+        "description": "A unique identifier for the specific email message."
+      }
+    },
+    "definitions": {}
+  },
+  "settings": {},
+  "properties": {
+    "toolPath": "/ForwardMailV2",
+    "objectName": "ForwardMailV2",
+    "toolDisplayName": "Forward Email",
+    "toolDescription": "Forwards an email in Gmail to another recipient",
+    "method": "POST",
+    "connection": {
+      "id": "3f29bd83-8c8b-4eef-af74-934fab24979f",
+      "name": "24f2006181@ds.study.iitm.ac.in",
+      "elementInstanceId": 0,
+      "apiBaseUri": "",
+      "state": "enabled",
+      "isDefault": false,
+      "connector": {
+        "key": "uipath-google-gmail",
+        "name": "Gmail",
+        "image": "https://cloud.uipath.com/elements_/scaleunit_/17d5b0e1-f66c-4b4d-b4aa-620d35a563cf/v3/element/elements/uipath-google-gmail/image",
+        "enabled": true
+      },
+      "folder": {
+        "key": "7597ef4e-fe7f-4c16-8638-913e05af48ce",
+        "path": "e1838d5c-6af7-4649-b036-edc820ce61b1.7597ef4e-fe7f-4c16-8638-913e05af48ce"
+      },
+      "solutionProperties": {
+        "resourceKey": "3f29bd83-8c8b-4eef-af74-934fab24979f"
+      }
+    },
+    "parameters": [
+      {
+        "name": "id",
+        "displayName": "Email ID",
+        "type": "string",
+        "fieldLocation": "query",
+        "value": "{{email_id}}",
+        "description": "The ID of email to forward",
+        "position": "primary",
+        "sortOrder": 1,
+        "required": true,
+        "fieldVariant": "argument",
+        "dynamic": true,
+        "isCascading": false,
+        "enumValues": null,
+        "loadReferenceOptionsByDefault": null,
+        "dynamicBehavior": [],
+        "reference": null,
+        "displayValue": "{{email_id}}"
+      },
+      {
+        "name": "to",
+        "displayName": "To",
+        "type": "string",
+        "fieldLocation": "body",
+        "value": "gurendersingh@gmail.com",
+        "description": "The primary recipients of the email, separated by comma (,)",
+        "position": "primary",
+        "sortOrder": 2,
+        "required": true,
+        "fieldVariant": "static",
+        "isCascading": false,
+        "dynamic": true,
+        "enumValues": null,
+        "loadReferenceOptionsByDefault": null,
+        "dynamicBehavior": [],
+        "reference": null
+      },
+      {
+        "name": "body",
+        "displayName": "Body",
+        "type": "string",
+        "fieldLocation": "body",
+        "value": "<p class=\"editor-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Hi Leon,</span></p><p class=\"editor-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">            Please answer the students question .</span></p><p class=\"editor-paragraph\" dir=\"ltr\"><br></p><p class=\"editor-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">regards,</span></p><p class=\"editor-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Your Eugene(AI Assistant)</span></p>",
+        "description": "Please reply to this student.\n\nRegards,\nEugene (Your AI Assistant)",
+        "componentType": "RichTextEditorHTML",
+        "position": "primary",
+        "sortOrder": 3,
+        "required": false,
+        "fieldVariant": "static",
+        "isCascading": false,
+        "dynamic": true,
+        "enumValues": null,
+        "loadReferenceOptionsByDefault": null,
+        "dynamicBehavior": [],
+        "reference": null
+      },
+      {
+        "name": "saveAsDraft",
+        "displayName": "Save as draft",
+        "type": "boolean",
+        "fieldLocation": "query",
+        "value": "{{prompt}}",
+        "description": "Specifies whether the email should be saved as draft instead of being sent",
+        "position": "primary",
+        "sortOrder": 4,
+        "required": false,
+        "fieldVariant": "dynamic",
+        "dynamic": true,
+        "isCascading": false,
+        "enumValues": null,
+        "loadReferenceOptionsByDefault": null,
+        "dynamicBehavior": [],
+        "reference": null
+      },
+      {
+        "name": "subject",
+        "displayName": "New subject",
+        "type": "string",
+        "fieldLocation": "body",
+        "value": "{{prompt}}",
+        "description": "The new subject of the email. If left blank, the original subject is used",
+        "position": "secondary",
+        "sortOrder": 5,
+        "required": false,
+        "fieldVariant": "dynamic",
+        "isCascading": false,
+        "dynamic": true,
+        "enumValues": null,
+        "loadReferenceOptionsByDefault": null,
+        "dynamicBehavior": [],
+        "reference": null
+      },
+      {
+        "name": "file",
+        "displayName": "Attachment",
+        "type": "file",
+        "fieldLocation": "multipart",
+        "value": "{{prompt}}",
+        "description": "The attachment to be sent with the forwarded email",
+        "position": "secondary",
+        "sortOrder": 6,
+        "required": false,
+        "fieldVariant": "dynamic",
+        "dynamic": true,
+        "isCascading": false,
+        "enumValues": null,
+        "loadReferenceOptionsByDefault": null,
+        "dynamicBehavior": [],
+        "reference": null
+      },
+      {
+        "name": "cc",
+        "displayName": "CC",
+        "type": "string",
+        "fieldLocation": "body",
+        "value": "{{prompt}}",
+        "description": "The secondary recipients of the email, separated by comma (,)",
+        "position": "secondary",
+        "sortOrder": 7,
+        "required": false,
+        "fieldVariant": "dynamic",
+        "isCascading": false,
+        "dynamic": true,
+        "enumValues": null,
+        "loadReferenceOptionsByDefault": null,
+        "dynamicBehavior": [],
+        "reference": null
+      },
+      {
+        "name": "bcc",
+        "displayName": "BCC",
+        "type": "string",
+        "fieldLocation": "body",
+        "value": "{{prompt}}",
+        "description": "The hidden recipients of the email, separated by comma (,)",
+        "position": "secondary",
+        "sortOrder": 8,
+        "required": false,
+        "fieldVariant": "dynamic",
+        "isCascading": false,
+        "dynamic": true,
+        "enumValues": null,
+        "loadReferenceOptionsByDefault": null,
+        "dynamicBehavior": [],
+        "reference": null
+      },
+      {
+        "name": "body",
+        "displayName": "Body",
+        "type": "string",
+        "fieldLocation": "multipart",
+        "value": "<p class=\"editor-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Hi Leon,</span></p><p class=\"editor-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">            Please answer the students question .</span></p><p class=\"editor-paragraph\" dir=\"ltr\"><br></p><p class=\"editor-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">regards,</span></p><p class=\"editor-paragraph\" dir=\"ltr\"><span style=\"white-space: pre-wrap;\">Your Eugene(AI Assistant)</span></p>",
+        "description": "Please reply to this student.\n\nRegards,\nEugene (Your AI Assistant)",
+        "position": "secondary",
+        "sortOrder": 11,
+        "required": false,
+        "fieldVariant": "static",
+        "dynamic": true,
+        "isCascading": false,
+        "enumValues": null,
+        "loadReferenceOptionsByDefault": null,
+        "dynamicBehavior": [],
+        "reference": null
+      }
+    ],
+    "bodyStructure": {
+      "contentType": "multipart",
+      "jsonBodySection": "body"
+    }
+  },
+  "guardrail": {
+    "policies": []
+  },
+  "iconUrl": "https://cloud.uipath.com/elements_/scaleunit_/17d5b0e1-f66c-4b4d-b4aa-620d35a563cf/v3/element/elements/uipath-google-gmail/image",
+  "id": "d7629062-2423-437a-b8bc-86b346a594ba",
+  "isPreview": true,
+  "isEnabled": true
+}
